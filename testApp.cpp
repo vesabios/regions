@@ -66,7 +66,7 @@ void testApp::update() {
 //--------------------------------------------------------------
 void testApp::draw() {
 
-  	ofEnableAlphaBlending();    // turn on alpha blending
+  
 
 	calculateRegionBoundaries();
 
@@ -76,7 +76,7 @@ void testApp::draw() {
 	canvas.draw(displayWall.x, displayWall.y, displayWall.width, displayWall.height);
 
 	// draw regions
-
+	ofEnableAlphaBlending();    // turn on alpha blending
 	y = displayWall.height + displayWall.y + 10;
 
 	vector<region>::iterator it;
@@ -118,6 +118,8 @@ void testApp::draw() {
   		ofTriangle((displayWall.x + r) - 1, midp-5, (displayWall.x + r)-6, midp, (displayWall.x + r) - 1, midp+5);
 
 	}
+
+	ofDisableAlphaBlending();
 
 
 
